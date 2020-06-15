@@ -1,6 +1,6 @@
 ## log-count
 
-[![npm version](https:badge.fury.io/js/log-count.svg)](https:badge.fury.io/js/log-count)
+[![npm version](https://badge.fury.io/js/log-count.svg)](https://badge.fury.io/js/log-count)
 [![Downloads per month](https://img.shields.io/npm/dy/log-count.svg?maxAge=31536000)](https://github.com/davidryan59/log-count)
 [![Build status](https://travis-ci.org/davidryan59/log-count.svg?master)](https://travis-ci.org/davidryan59)
 
