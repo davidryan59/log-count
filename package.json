@@ -1,0 +1,45 @@
+{
+  "name": "log-count",
+  "description": "Wrapper for console.log with several log levels",
+  "version": "0.0.1",
+  "author": {
+    "name": "David Ryan",
+    "email": "davidryan1998@hotmail.com",
+    "url": "https://github.com/davidryan59"
+  },
+  "repository": "git@github.com:davidryan59/log-count.git",
+  "license": "ISC",
+  "main": "dist/src/index.js",
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "lint": "eslint lib",
+    "lint:fix": "eslint lib --fix",
+    "test": "jest --test-path-pattern=lib/test --watch-all=true --coverage=true",
+    "testOnly": "jest --test-path-pattern=lib/test",
+    "build": "rm -rf dist && mkdir -p dist && babel lib --out-dir dist",
+    "examples": "npm run build && npm run examplesOnly",
+    "examplesOnly": "cd ./dist/examples && node run.js",
+    "prepublishOnly": "npm run lint && npm run testOnly && npm run build"
+  },
+  "dependencies": {
+    "is-object": "^1.0.1",
+    "is-string": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.0.1"
+  },
+  "keywords": [
+    "level",
+    "levels",
+    "log",
+    "logging"
+  ]
+}
