@@ -13,25 +13,37 @@
 Do `npm install log-count` in your Javascript npm project directory. Then in a Javascript file:
 
 ``` js
+// Importing
 import { Logger } from 'log-count';
 
+// Default constructor
 const defaultLog = new Logger();
 defaultLog.success('You have successfully displayed a success-level message using log-count');
 
-const logger7 = new Logger({
+// Constructing
+const logger = new Logger({
   level: 7,
   shy: false,
   hideLevel: false,
 });
-logger7.fatal('A fatal error');
-logger7.error('An error');
-logger7.warn('A warning');
-logger7.success('A success');
-logger7.info('An info');
-logger7.debug('A debug');
-logger7.trace('A trace');
-logger7.debug({ text: 'Text can be supplied as an object' });
-logger7.success({ obj: { or: 'you', can: 'directly log', any: 'object' } });
+
+// Logging
+logger.fatal('A fatal error');
+logger.error('An error');
+logger.warn('A warning');
+logger.success('A success');
+logger.info('An info');
+logger.debug('A debug');
+logger.trace('A trace');
+logger.debug({ text: 'Text can be supplied as an object' });
+logger.success({ obj: { or: 'you', can: 'directly log', any: 'object' } });
+
+// Counting
+console.log(logger.count) // {}  // Empty object
+logger.info({ type: 'myType' });
+logger.error({ type: 'myTypeB' });
+logger.debug({ type: 'myTypeB' });
+console.log(logger.count) // { myType: 1, myTypeB: 2 }  // Each type gives a separate counter
 ```
 
 ### Constructor options
